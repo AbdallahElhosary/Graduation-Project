@@ -1,0 +1,50 @@
+﻿@model IEnumerable<NewProject.Models.NeededItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container-fluid d-flex align-items-start justify-content-center vh-100">
+    <div class="text-center">
+        <h1>Determine Specification and price for  Item</h1>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                @* <p>
+                <a asp-action="Create">Create New</a>
+                </p> *@
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-primary">
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TenderId)
+                            </th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenderId)
+                                </td>
+                                <td>
+                                    @* DSCNI => Determine Specification and price for  Item *@
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-secondary" style="color:black"> DSCNI </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

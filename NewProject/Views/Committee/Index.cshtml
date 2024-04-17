@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container-fluid d-flex align-items-start justify-content-center vh-100 mt-10">
+    <div class="text-center">
+        <h2>to show members in any committe click on her Button</h2>
+        <br />
+        <br />
+        <br />
+        <div class="d-grid gap-2">
+            <a class="btn btn-primary btn-lg m-12" asp-controller="Committee" asp-action="LastSPCMembers">Specific..... And price Members</a>
+            <br />
+            <a class="btn btn-primary btn-lg m-12" asp-controller="Committee" asp-action="LastTECMembers">Technical committee Members</a>
+            <br />
+            <a class="btn btn-primary btn-lg m-12" asp-controller="Committee" asp-action="LastSLCMembers">Selection Committee Members</a>           
+        </div>       
+    </div>
+</div>

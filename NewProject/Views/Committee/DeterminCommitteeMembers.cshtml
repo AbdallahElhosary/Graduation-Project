@@ -1,0 +1,59 @@
+﻿@model CommitteeViewModel
+
+@{
+    ViewData["Title"] = "DeterminCommitteeMembers";
+}
+
+<div class="container-fluid d-flex align-items-start justify-content-center vh-100">
+    <div class="text-center">
+        <h1>Determin Committees Members</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <form asp-action="DeterminCommitteeMembers">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="space">
+                        <label asp-for="SelectSPCMembers" class="form-label d-flex align-items-start justify-content-center"></label>
+                        <select multiple="" asp-for="SelectSPCMembers" class="form-select" asp-items="Model.Memebers"
+                                data-placeholder="Select Specification and Price members">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="SelectSPCMembers" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="space">
+                        <label asp-for="SelectTECMembers" class="form-label  d-flex align-items-start justify-content-center"></label>
+                        <select multiple="" asp-for="SelectTECMembers" class="form-select" asp-items="Model.Memebers"
+                                data-placeholder="Select Technical Committee members">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="SelectTECMembers" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="space">
+                        <label asp-for="SelectSLCMembers" class="form-label  d-flex align-items-start justify-content-center"></label>
+                        <select multiple="" asp-for="SelectSLCMembers" class="form-select" asp-items="Model.Memebers"
+                                data-placeholder="Select Selection Committee members">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="SelectSLCMembers" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="form-group d-grid gap-2 space">
+                        <input type="submit" value="Okay" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+       
+   
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

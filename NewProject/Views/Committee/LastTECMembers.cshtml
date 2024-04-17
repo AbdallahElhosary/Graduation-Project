@@ -1,0 +1,46 @@
+﻿@model TechnicalCommittee
+
+@{
+    ViewData["Title"] = "LastSLCMembers";
+}
+
+
+<br />
+<div class="container-fluid d-flex align-items-start justify-content-center vh-100">
+    <div class="text-center">
+        <h2>Current Technical Committee Members</h2>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered ">
+                    <thead>
+                        <tr class="table-primary">
+                            <th></th>
+                            <th>
+                                MamberNAme
+                            </th>
+                            @* <th>
+                            PassWord
+                            </th> *@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var i in Model.Members)
+                        {
+                            <tr>
+                                <td>@i.MemberId</td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => i.Member.Name)
+                                </td>
+                                @* <td>
+                            @Html.DisplayFor(modelItem => i.Member.Password)
+                            </td> *@
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

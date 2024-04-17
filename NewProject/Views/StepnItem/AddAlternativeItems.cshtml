@@ -1,0 +1,65 @@
+﻿@model AlternativeItemViewModel
+@{
+    ViewData["Title"] = "AddAlternativeItems";
+}
+
+<div class="container-fluid d-flex align-items-start justify-content-center vh-100 mt-10">
+    <div class="text-center">
+        <h2> Add Alternative Item </h2>
+        <hr /> 
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="AddAlternativeItems">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group space">
+                        <label asp-for="OfferId" class="control-label"></label>
+                        <input asp-for="OfferId" class="form-control" value="@Model.OfferId" readonly />
+                        <span asp-validation-for="OfferId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group space">
+                        <label asp-for="ValidItemId" class="control-label"></label>
+                        <input asp-for="ValidItemId" class="form-control" value="@Model.ValidItemId" readonly />
+                        <span asp-validation-for="ValidItemId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group space">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group space">
+                        <textarea asp-for="Description" class="form-control" placeholder="Enter Description " rows="3"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group space">
+                        <label asp-for="Type" class="control-label"></label>
+                        <input asp-for="Type" class="form-control" />
+                        <span asp-validation-for="Type" class="text-danger"></span>
+                    </div>
+                    <div class="form-group space">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group space">
+                        <input type="submit" value="AddItem" class="btn btn-primary " />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br/>
+        <div class="form-group d-grid gap-2 space">
+
+            <a asp-action="Items" asp-controller="Offer" class="btn btn-success mt-2"> Done </a>
+            <br />
+            <a asp-action="Add" asp-controller="Offer" class="btn btn-success mt-2"> Add new Offer </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="~/js/pricevalidtion.js"></script>
+}

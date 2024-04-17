@@ -1,0 +1,74 @@
+﻿@model IEnumerable<NeededItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container-fluid d-flex align-items-start justify-content-center vh-100">
+    <div class="text-center">
+        <h1>Index</h1>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-primary">
+                            <th>
+                                @Html.DisplayNameFor(model => model.Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Description)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Type)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.InitialPrice)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TenderId)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Type)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.InitialPrice)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenderId)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="form-group d-grid gap-2 space">
+
+                    <a class="btn btn-primary " asp-action="ChooseValidItem" asp-controller="ValidItem">Ok</a>
+
+                </div>
+               @*  <p>
+                    <a class="btn btn-primary " asp-action="ChooseValidItem" asp-controller="ValidItem">Ok</a>
+                </p> *@
+            </div>
+        </div>
+    </div>
+</div>
+
